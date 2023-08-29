@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/bilgi-react/static/css/main.b6fcb7ef.css",
+    "main.js": "/bilgi-react/static/js/main.1fc1368d.js",
+    "index.html": "/bilgi-react/index.html",
+    "main.b6fcb7ef.css.map": "/bilgi-react/static/css/main.b6fcb7ef.css.map",
+    "main.1fc1368d.js.map": "/bilgi-react/static/js/main.1fc1368d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b6fcb7ef.css",
+    "static/js/main.1fc1368d.js"
+  ]
+}
