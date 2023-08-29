@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  transition: all 0.07s linear;
+}
+
+#title {
+  animation: title-animation 1s ease-out;
+  transition: all 0.1s linear;
+}
+
+#title-explanation {
+  animation: title-exp-animation 1s ease-out;
+  transition: all 0.1s linear;
+}
+
+@keyframes title-animation {
+  from {@apply opacity-0}
+  to {@apply opacity-100}
+}
+
+@keyframes title-exp-animation {
+  from {@apply opacity-0}
+  to {@apply opacity-40}
+}
+
+.shadow {
+  box-shadow: 0px 0px 30px rgb(73, 73, 73);
+}
+
+.service-card {
+  @apply hover:bg-red-300 md:mx-5 py-5 px-3 w-80 h-80;
+}
+
+.service-card-text {
+  @apply flex justify-evenly items-center text-center text-2xl text-red-600 mb-5;
+}
+
+.service-card svg {
+  @apply text-red-400 w-10 h-10;
+}
+
+.fran-item{
+  @apply w-auto lg:h-10 h-7 lg:mx-5 mx-2 my-2
+}
