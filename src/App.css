@@ -23,7 +23,7 @@
 
 @keyframes title-exp-animation {
   from {@apply opacity-0}
-  to {@apply opacity-40}
+  to {@apply opacity-100}
 }
 
 .shadow {
@@ -31,7 +31,7 @@
 }
 
 .service-card {
-  @apply hover:bg-red-300 md:mx-5 py-5 px-3 w-80 h-80;
+  @apply hover:bg-red-100 md:mx-5 py-5 px-3 w-80 h-80;
 }
 
 .service-card-text {

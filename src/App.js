@@ -7,10 +7,10 @@ import { GrHostMaintenance } from 'react-icons/gr';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
 import { SlWrench } from 'react-icons/sl';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectFlip } from 'swiper/modules';
+import { Autoplay, EffectFlip, FreeMode } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
-import 'swiper/css/effect-flip';
+import 'swiper/css/free-mode';
 
 export default function Home() {
   const franchises = ['hp', 'siemens', 'ABB', 'Sew-eurodrive', 'schneider', 'sick', 'pilz', 'allen-bradley', 'dahua', 'inform', 'dell', 'lenovo', 'nexans', 'legrand', 'omron', 'digitus', 'wisetech', 'paradox', 'honeywell', 'apc', 'hcs']
@@ -141,24 +141,24 @@ export default function Home() {
         <>
           <header>
             <div className='fixed w-full z-20 text-white border-b-4 border-red-600' role='navigation'>
-              <nav className='md:flex justify-between items-center mx-auto lg:px-20 md:px-10 px-5 bg-gray-600'>
-                <div className='flex justify-between space-x-3 py-4'>
-                  <button onClick={() => scrollHandler('')} className='mx-auto'><span className="text-4xl font-bold font-serif hover:text-red-300 italic">B<span className='text-red-500'>B</span>B</span></button>
+              <nav className='md:flex justify-between items-center bg-gray-200 mx-auto lg:px-20 md:px-10 px-5'>
+                <div className='flex justify-between py-2'>
+                  <button onClick={() => scrollHandler('')} className='mx-auto'><span className="text-4xl font-bold font-serif text-red-400 hover:text-red-500 italic">B<span className='text-red-600'>B</span>B</span></button>
                 </div>
-                <div className='flex md:justify-between justify-end py-3 lg:space-x-10 space-x-5'>
-                  <button onClick={() => scrollHandler('home')} className='hover:text-red-200'>Ana sayfa</button>
-                  <button onClick={() => scrollHandler('services')} className='hover:text-red-200'>Hizmetlerimiz</button>
-                  <button onClick={() => scrollHandler('contact')} className='hover:text-red-200'>İletişim</button>
-                  <button onClick={() => scrollHandler('franchises')} className='hover:text-red-200'>Bayiliklerimiz</button>
+                <div className='flex md:justify-end justify-center py-3 lg:space-x-10 space-x-2'>
+                  <button onClick={() => scrollHandler('home')} className='text-red-600 hover:text-red-700'>Ana sayfa</button>
+                  <button onClick={() => scrollHandler('services')} className='text-red-600 hover:text-red-700'>Hizmetlerimiz</button>
+                  <button onClick={() => scrollHandler('contact')} className='text-red-600 hover:text-red-700'>İletişim</button>
+                  <button onClick={() => scrollHandler('franchises')} className='text-red-600 hover:text-red-700'>Bayiliklerimiz</button>
                 </div>
               </nav>
             </div>
           </header>
-          <div className='md:h-[4.2rem] h-[7.2rem] bg-blue-600'></div> {/*boşluğu dengelemek için*/}
+          <div className='md:h-[3.7rem] h-[6.7rem] bg-blue-600'></div> {/*boşluğu dengelemek için*/}
 
           <div className='fixed w-full h-5/6 bg-rose-500 pt-32 text-center'>
             <h1 id='title' className={`${textSizeSetter()} font-bold text-gray-100`}>Bilgi Bilişim Bilgisayar</h1>
-            <h3 id='title-explanation' className={`${explanationSizeSetter()} text-3xl mt-5 opacity-40`}>-Kaliteli ve güvenilir hizmet-</h3>
+            <h3 id='title-explanation' className={`${explanationSizeSetter()} text-3xl mt-5 text-red-200`}>-Kaliteli ve güvenilir hizmet-</h3>
           </div>
 
           <main className="shadow absolute top-[60%] bg-gray-200 py-32 rounded-3xl z-10">
@@ -167,11 +167,11 @@ export default function Home() {
               <div className='flex justify-evenly items-center flex-wrap bg-gray-100 w-11/12 mx-auto mt-12 py-10 rounded-3xl'>
                 <figure className='service-card opacity-0'>
                   <div className='service-card-text'><PiDesktopTowerBold /><figcaption>Donanım Satışı</figcaption></div>
-                  <Swipe imgs={['img1.png', 'img2.jpg', 'img3.png']} classes={['', 'rounded-3xl', '']} alts={['server', 'computer case', 'printer']} dim3={[200, 200]} delay={3000} />
+                  <Swipe imgs={['img1.png', 'img2.jpg', 'img3.png']} classes={['', 'rounded-3xl', '']} alts={['server', 'computer case', 'printer']} dim3={[200, 200]} delay={2700} />
                 </figure>
                 <figure className='service-card opacity-0'>
                   <div className='service-card-text'><BiCctv /><figcaption>Güvenlik Sistemleri</figcaption></div>
-                  <Swiper effect={'flip'} slidesPerView={1} loop={true} modules={[Autoplay, EffectFlip]} autoplay={{ delay: 2000 }}>
+                  <Swiper slidesPerView={1} loop={true} modules={[Autoplay]} autoplay={{ delay: 2000 }}>
                     <SwiperSlide>
                       <img src="images/img16.png" className={`mx-auto`} width={300} height={300} alt={`bullet kamera resmi`} />
                     </SwiperSlide>
@@ -250,11 +250,13 @@ export default function Home() {
                 <h2 className='mb-5 text-center text-3xl font-semibold text-red-600'>Bayiliklerimiz</h2>
                 <div className='flex flex-wrap justify-center'>
                   {franchises.map((franchise, index) =>
-                    <img className="fran-item" src={`./logos/logo${index + 1}.png`} alt={`${franchise} logo`} key={index} />
+                    <img className="fran-item" src={`logos/logo${index + 1}.png`} alt={`${franchise} logo`} key={index} />
                   )}
                 </div>
               </div>
             </section>
+
+            <div className='absolute bottom-0 w-full h-4 bg-red-500' />
           </main>
         </>
       }
@@ -263,7 +265,7 @@ export default function Home() {
 }
 export function Swipe({ imgs, classes, alts, dim1 = [300, 300], dim2 = [300, 300], dim3 = [300, 300], delay }) {
   return (
-    <Swiper effect={'flip'} slidesPerView={1} loop={true} modules={[Autoplay, EffectFlip]} autoplay={{ delay: delay }}>
+    <Swiper slidesPerView={1} loop={true} modules={[Autoplay]} autoplay={{ delay: delay }}>
       <SwiperSlide>
         <img src={`images/${imgs[0]}`} className={`mx-auto ${classes[0]}`} width={dim1[0]} height={dim1[1]} alt={`${alts[0]}`} />
       </SwiperSlide>
